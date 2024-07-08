@@ -19,6 +19,7 @@ function App() {
         <img src={blob1} className='downShape' />
           {quiz? <div className='openContainer'>
               <h1>Quizzical</h1>
+              <p>Desktop version</p>
               <p>I know say you no sabi am, me we do am no sabi am too </p>
               <button onClick={StartQuiz}>Start Quiz</button>
           </div> : <Quizmenu /> }
