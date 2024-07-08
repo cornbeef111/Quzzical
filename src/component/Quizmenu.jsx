@@ -1,7 +1,7 @@
 import React from 'react'
 import {decode} from 'html-entities';
 
-function Quizmenu(){
+function Quizmenu(props){
  const [questions, setQuestions] = React.useState([])
  const [formData, setFormData] = React.useState({}) 
  const [selectedAnswer, setSelectedAnswer] = React.useState({})
@@ -79,6 +79,7 @@ return (
                               <label 
                               htmlFor={`${question.name}-${aIndex}`}
                               style={getAnswerStyle(question, answer)}
+                              className='moveLabel'
                               >
                                 {answer}
                              </label>
@@ -89,13 +90,15 @@ return (
                     <hr />
                  </div>
             ))
-            : (<p>Loading questions...</p>)}
+            : (<p className='whole'>Loading questions...</p>)}
             
         </form>
 
         <div className='scoreCount'>
             <h1>{scoreCount} of {questions.length} correct </h1>
+            <button onClick={props.endgame} className='endBtn'> Play again </button>
         </div>
+       
         
     </div>
 )

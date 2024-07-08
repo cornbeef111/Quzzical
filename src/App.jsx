@@ -10,6 +10,9 @@ function App() {
    function StartQuiz(){
       setQuiz(false)
    }
+   function endgame(){
+    setQuiz(true)
+   }
 
   return (
     <>
@@ -19,10 +22,10 @@ function App() {
         <img src={blob1} className='downShape' />
           {quiz? <div className='openContainer'>
               <h1>Quizzical</h1>
-              <p>Desktop version</p>
-              <p>I know say you no sabi am, me we do am no sabi am too </p>
+              <p>(Desktop version)</p>
+              <p>P/S: Please tilt your mobile phone</p>
               <button onClick={StartQuiz}>Start Quiz</button>
-          </div> : <Quizmenu /> }
+          </div> : <Quizmenu endgame={endgame}/> }
           
 
       </div>
